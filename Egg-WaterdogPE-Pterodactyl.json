@@ -1,0 +1,58 @@
+{
+    "_comment": "DO NOT EDIT: WATERDOGPE EGG FOR PTERODACTYL - ZORNER.MEN",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-04-28T17:16:58+00:00",
+    "name": "Waterdog PE",
+    "author": "@ZORNER",
+    "description": "Bedrock proxy like BungeeCord for Minecraft Bedrock Edition, with support for x86/x64 and ARM64 architectures.",
+    "features": [
+        "null"
+    ],
+    "docker_images": {
+        "Java 21": "ghcr.io\/ptero-eggs\/yolks:java_21",
+        "Java 17": "ghcr.io\/ptero-eggs\/yolks:java_17",
+        "Java 16": "ghcr.io\/ptero-eggs\/yolks:java_16",
+        "Java 11": "ghcr.io\/ptero-eggs\/yolks:java_11",
+        "Java 8": "ghcr.io\/ptero-eggs\/yolks:java_8"
+    },
+    "file_denylist": [],
+    "startup": "java -Dterminal.ansi=true -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+    "config": {
+        "files": "{\r\n    \"config.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"listener.host\": \"0.0.0.0:{{server.build.default.port}}\",\r\n            \"servers.*.address\": {\r\n                \"regex:^(127\\\\.0\\\\.0\\\\.1|localhost)(:\\\\d{1,5})?$\": \"{{config.docker.interface}}$2\"\r\n            },\r\n\"use_certificate_payload\": false,\r\n            \"use_login_extras\": true\r\n        },\r\n        \"replace\": {\r\n            \"use_certificate_payload\": false,\r\n            \"use_login_extras\": true\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"Started query on \"\r\n}",
+        "logs": "{}",
+        "stop": "end"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\napt update\r\napt install -y curl wget\r\n\r\nif [ ! -d \/mnt\/server ]; then\r\n    mkdir \/mnt\/server\r\nfi\r\n\r\ncd \/mnt\/server || exit 1\r\n\r\nif [[ \"${SERVER_JARFILE}\" == \"*\\.jar\" ]]; then\r\n    echo -e \"adding.jar to server file name\"\r\n    SERVER_JARFILE=\"${SERVER_JARFILE}.jar\"\r\nfi\r\n\r\nif [ -z \"${WATERDOG_VERSION}\" ] || [ \"${WATERDOG_VERSION}\" == \"latest\" ]; then\r\n    echo -e \"downloading latest waterdog pe build\\n\"\r\n    wget -O ${SERVER_JARFILE} https:\/\/github.com\/WaterdogPE\/WaterdogPE\/releases\/download\/latest\/Waterdog.jar\r\nelse \r\n    echo -e \"downloading waterdog pe build ${WATERDOG_VERSION}\\n\"\r\n    wget -O ${SERVER_JARFILE} https:\/\/github.com\/WaterdogPE\/WaterdogPE\/releases\/download\/${WATERDOG_VERSION}\/Waterdog.jar\r\nfi\r\n\r\n# wget -O Waterdog.jar https:\/\/github.com\/WaterdogPE\/WaterdogPE\/releases\/latest\/download\/Waterdog.jar\r\n\r\nchmod +x ${SERVER_JARFILE}\r\n\r\necho \"-----------------------------------------\"\r\necho \"WaterdogPE @ZORNER\"\r\necho \"-----------------------------------------\"",
+            "container": "ghcr.io\/ptero-eggs\/installers:debian",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server Jar File",
+            "description": "The jar to run to",
+            "env_variable": "SERVER_JARFILE",
+            "default_value": "Waterdog.jar",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "Waterdog PE Version",
+            "description": "The build to pull and install. (Ex. v2.0.3), or set to latest This is the build number on https:\/\/github.com\/WaterdogPE\/WaterdogPE\/releases",
+            "env_variable": "WATERDOG_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
