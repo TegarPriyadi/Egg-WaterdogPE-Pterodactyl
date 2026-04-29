@@ -1,8 +1,6 @@
 # 🚀 WaterdogPE Pterodactyl Egg - Support x86/ARM64
 
-A powerful **Pterodactyl Egg** for running **WaterdogPE**, a lightweight and high-performance proxy for Minecraft Bedrock Edition.
-
-Created by **@[ZORNER](https://zorner.men)**
+A powerful **Pterodactyl Egg** for running **WaterdogPE**, Created by **@[ZORNER](https://zorner.men)**
 
 ---
 
