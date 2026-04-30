@@ -1,12 +1,12 @@
-# 🚀 WaterdogPE Pterodactyl Egg - Support x86/ARM64
+# 🚀 WaterdogPE Pterodactyl Eggs - Support x86/ARM64
 
-A powerful **Pterodactyl Egg** for running **WaterdogPE**, Created by **@[ZORNER](https://zorner.men)**
+A powerful **Pterodactyl Eggs** for running **WaterdogPE**, Created by **@[ZORNER](https://zorner.men)**
 
 ---
 
 ## 📖 Overview
 
-This egg allows you to easily deploy **WaterdogPE** on Pterodactyl Panel.
+This eggs allows you to easily deploy **WaterdogPE** on Pterodactyl Panel.
 WaterdogPE is a Bedrock proxy similar to BungeeCord (Java Edition), enabling players to connect and switch between multiple Minecraft Bedrock servers using a single IP.
 
 It is optimized for performance, stability, and multi-server network architecture.
@@ -66,7 +66,7 @@ online-mode=false
 * Note its **IP address** and port (default: 19132)
 
 2. **Open WaterdogPE’s configuration file**
-   Navigate to the WaterdogPE directory inside your Pterodactyl Egg instance:
+   Navigate to the WaterdogPE directory inside your Pterodactyl Eggs instance:
 
    ```
    config.yml
@@ -113,7 +113,7 @@ online-mode=false
             server_type: bedrock
     ```
 
-> Save the file and restart WaterdogPE (restart the Egg from Pterodactyl panel)
+> Save the file and restart WaterdogPE (restart the Eggs from Pterodactyl panel)
 
 ---
 
