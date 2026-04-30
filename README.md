@@ -128,8 +128,8 @@ After adding a new server:
 
 If the backend server shows "`Connection refused`" or "`Not authenticated`", double-check that `online-mode=false` is applied and the server was restarted.
 
-**⚠️TIP :**
-Troubleshooting: If a warning appears to enable cheats when using the` /server` command, it is recommended to use an additional **[plugins](https://github.com/TegarPriyadi/WaterdogPE-Plugins)** as an alternative to the server switching system for more stability.
+**⚠️TIP**
+Troubleshooting: If a warning appears to enable cheats when using the `/server` command, it is recommended to use an additional **[plugins](https://github.com/TegarPriyadi/WaterdogPE-Plugins)** as an alternative to the `/server` switching system for more stability.
 
 
 **<3 DONASI**
