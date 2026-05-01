@@ -1,4 +1,8 @@
-# 🚀 WaterdogPE Pterodactyl Eggs - Support x86/ARM64
+<h1>
+  <img src="https://avatars.githubusercontent.com/u/72519716?s=200&v=4" width="40" align="center">
+  WaterdogPE Pterodactyl Eggs - Support x86/ARM64
+</h1>
+
 
 A powerful **Pterodactyl Eggs** for running **WaterdogPE**, Created by **@[ZORNER](https://zorner.men)**
 
